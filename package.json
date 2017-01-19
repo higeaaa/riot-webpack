@@ -1,0 +1,36 @@
+{
+  "name": "riot-webpack",
+  "version": "0.0.1",
+  "description": "Example of webpack and riot",
+  "repository": "riot/examples",
+  "main": "app/main.js",
+  "author": "@higeaaa",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors -d --port 3000"
+  },
+  "keywords": [
+    "riot",
+    "webpack",
+    "babel",
+    "sass"
+  ],
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015-riot": "^1.1.0",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
+    "font-awesome-webpack": "0.0.4",
+    "node-sass": "^4.3.0",
+    "riot": "^3.0.7",
+    "riotjs-loader": "^4.0.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

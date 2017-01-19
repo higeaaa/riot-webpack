@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="https://use.fontawesome.com/6c10f0cfc1.js"></script> -->
+    <title>Search a music from iTunes</title>
+  </head>
+  <body>
+    <search></search>
+    <results-cards></results-cards>
+    <script type="text/javascript">
+      function debounce(func, wait, immediate){
+        var timeout
+        return function(){
+          var context = this, args = arguments
+          var later = function(){
+            timeout = null
+            if (!immediate) func.apply(context, args)
+          }
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout)
+          timeout = setTimeout(later, wait)
+          if (callNow) func.apply(context, args)
+        }
+      }
+    </script>
+    <script src="./public/bundle.js"></script>
+  </body>
+</html>
