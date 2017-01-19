@@ -17,7 +17,7 @@
   </div>
 
 
-  <style type="scss" scoped>
+  <style type="scss">
     :scope {
       position: absolute;
       top: 10rem;
