@@ -9,8 +9,8 @@ I posted a article that I have troubled when I created this below.
 ## Usage
 
 ```sh
-git clone https://github.com/higeaaa/music_search.git
-cd music_search
+git clone https://github.com/higeaaa/riot-webpack.git
+cd riot-webpack
 npm install
 npm start
 ```
