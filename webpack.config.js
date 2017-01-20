@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-// import webpack from 'webpack'
 
 module.exports = {
   entry: './app/main.js',
@@ -14,12 +13,28 @@ module.exports = {
     new webpack.ProvidePlugin({ riot: 'riot' })
   ],
   module: {
-    preLoaders: [{
-      test   : /\.tag$/,
-      exclude: /node_modules/,
-      loader : 'riotjs-loader'
-    }],
+    preLoaders: [
+      {
+        test   : /\.js$|.tag$|.es6$/,
+        exclude: /node_modules/,
+        loader : 'eslint-loader'
+      },
+      {
+        test   : /\.tag$/,
+        exclude: /node_modules/,
+        loader : 'riotjs-loader'
+      }
+    ],
     loaders: [
+      {
+        test   : /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url-loader?limit=10000&minetype=application/font-woff"
+      },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      }
+    ],
+    postLoaders: [
       {
         test   : /\.js$|\.tag$/,
         exclude: /node_modules/,
@@ -27,13 +42,6 @@ module.exports = {
         query  : {
           presets: ['es2015-riot']
         }
-      },
-      {
-        test   : /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&minetype=application/font-woff"
-      },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
       }
     ]
   },
