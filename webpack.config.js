@@ -15,7 +15,7 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test   : /\.js$|.tag$|.es6$/,
+        test   : /\.js|\.tag|\.es6$/,
         exclude: /node_modules/,
         loader : 'eslint-loader'
       },
@@ -36,7 +36,7 @@ module.exports = {
     ],
     postLoaders: [
       {
-        test   : /\.js$|\.tag$/,
+        test   : /\.js|\.tag$/,
         exclude: /node_modules/,
         loader : 'babel-loader',
         query  : {
@@ -44,6 +44,9 @@ module.exports = {
         }
       }
     ]
+  },
+  eslint: {
+    configFile: './.eslintrc'
   },
   devServer: {
     historyApiFallback: true,
